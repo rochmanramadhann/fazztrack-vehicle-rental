@@ -1,0 +1,223 @@
+### USER SERVICE
+### ADD USER
+POST http://localhost:8080/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "alip",
+    "email": "alip@mail.com",
+    "password": "password"
+}
+
+### FIND USERS
+GET http://localhost:8080/users/search?name=oman HTTP/1.1
+Content-Type: application/json
+
+### SORT USERS
+GET http://localhost:8080/users/sort?sort=desc HTTP/1.1
+Content-Type: application/json
+
+### GET USERS
+GET http://localhost:8080/users/ HTTP/1.1
+Content-Type: application/json
+
+### GET USER
+GET http://localhost:8080/users/2 HTTP/1.1
+Content-Type: application/json
+
+### UPDATE USER
+PUT http://localhost:8080/users/4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "kirey",
+    "email": "kirey@mail.com",
+    "password": "kirey"
+}
+
+### DELETE USER
+DELETE http://localhost:8080/users/5 HTTP/1.1
+Content-Type: application/json
+
+### VEHICLE_TYPES SERVICE
+### ADD VEHICLE_TYPES
+POST http://localhost:8080/vehicles/types/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "sporti"
+}
+
+### FIND VEHICLE_TYPES
+GET http://localhost:8080/vehicles/types/search?name=Car HTTP/1.1
+Content-Type: application/json
+
+### SORT VEHICLE_TYPES
+GET http://localhost:8080/vehicles/types/sort?sort=desc HTTP/1.1
+Content-Type: application/json
+
+### GET VEHICLE_TYPES
+GET http://localhost:8080/vehicles/types/ HTTP/1.1
+Content-Type: application/json
+
+### GET VEHICLE_TYPE
+GET http://localhost:8080/vehicles/types/2 HTTP/1.1
+Content-Type: application/json
+
+### UPDATE VEHICLE_TYPE
+PUT http://localhost:8080/vehicles/types/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Dummy"
+}
+
+### DELETE VEHICLE_TYPE
+DELETE http://localhost:8080/vehicles/types/3 HTTP/1.1
+Content-Type: application/json
+
+### VEHICLE SERVICE
+### ADD VEHICLE
+POST http://localhost:8080/vehicles/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicle_type_id": 2,
+    "name": "Ferrari",
+    "book_count": 1,
+    "is_highlight": 0,
+    "stock": 5,
+    "price": 2000,
+    "alternative_price": 200
+}
+
+### FIND VEHICLES
+GET http://localhost:8080/vehicles/search?is_highlight=1 HTTP/1.1
+Content-Type: application/json
+
+### SORT VEHICLES
+GET http://localhost:8080/vehicles/sort?sort=desc HTTP/1.1
+Content-Type: application/json
+
+### GET VEHICLES
+GET http://localhost:8080/vehicles/ HTTP/1.1
+Content-Type: application/json
+
+### GET VEHICLE
+GET http://localhost:8080/vehicles/12 HTTP/1.1
+Content-Type: application/json
+
+### UPDATE VEHICLE
+PUT http://localhost:8080/vehicles/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "vehicle_type_id": 1,
+    "name": "Avanza",
+    "book_count": 1,
+    "is_highlight": 1,
+    "stock": 5,
+    "price": 2000,
+    "alternative_price": 200
+}
+
+### DELETE VEHICLE
+DELETE http://localhost:8080/vehicles/13 HTTP/1.1
+Content-Type: application/json
+
+### ORDER SERVICE
+### ADD ORDER
+POST http://localhost:8080/orders/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 5,
+    "order_code": "C0001",
+    "status": 0,
+    "qty": 5,
+    "order_date": 2022-06-13 03:04:30.076 +0700,
+    "return_date": 2022-06-12 03:04:30.076 +0700
+}
+
+### FIND ORDERS
+GET http://localhost:8080/orders/order_date=time HTTP/1.1
+Content-Type: application/json
+
+### SORT ORDERS
+GET http://localhost:8080/orders/sort?sort=desc HTTP/1.1
+Content-Type: application/json
+
+### GET ORDERS
+GET http://localhost:8080/orders/ HTTP/1.1
+Content-Type: application/json
+
+### GET ORDER
+GET http://localhost:8080/orders/12 HTTP/1.1
+Content-Type: application/json
+
+### UPDATE ORDER
+PUT http://localhost:8080/orders/12 HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 0,
+    "order_code": "1",
+    "status": 0,
+    "qty": 5,
+    "order_date": 2022-06-13 03:04:30.076 +0700,
+    "return_date": 2022-06-12 03:04:30.076 +0700
+}
+
+### DELETE ORDER
+DELETE http://localhost:8080/orders/13 HTTP/1.1
+Content-Type: application/json
+
+### FAVORITE SERVICE
+### ADD FAVORITE
+POST http://localhost:8080/favorites/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 2,
+    "vehicle_id":2
+}
+
+### FIND FAVORITES
+GET http://localhost:8080/favorites/FAVORITE_date=time HTTP/1.1
+Content-Type: application/json
+
+### SORT FAVORITES
+GET http://localhost:8080/favorites/sort?sort=desc HTTP/1.1
+Content-Type: application/json
+
+### GET FAVORITES
+GET http://localhost:8080/favorites/ HTTP/1.1
+Content-Type: application/json
+
+### GET FAVORITE
+GET http://localhost:8080/favorites/1 HTTP/1.1
+Content-Type: application/json
+
+### UPDATE FAVORITE
+PUT http://localhost:8080/favorites/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "vehicle_id": 1
+}
+
+### DELETE FAVORITE
+DELETE http://localhost:8080/favorites/13 HTTP/1.1
+Content-Type: application/json
+
+### AUTH LOGIN
+POST http://localhost:8080/auth/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "alip",
+    "password": "password"
+}
