@@ -11,9 +11,10 @@ import (
 	"github.com/rochmanramadhann/fazztrack-vehicle/src/modules/v1/users"
 	"github.com/rochmanramadhann/fazztrack-vehicle/src/modules/v1/vehicle_types"
 	"github.com/rochmanramadhann/fazztrack-vehicle/src/modules/v1/vehicles"
+	"github.com/rs/cors"
 )
 
-func New() (*mux.Router, error) {
+func New() (http.Handler, error) {
 	mainRoute := mux.NewRouter()
 
 	db, err := database.New()
@@ -29,9 +30,18 @@ func New() (*mux.Router, error) {
 	favorites.New(mainRoute, db)
 	auth.New(mainRoute, db)
 
-	return mainRoute, nil
+	corsMiddleware := cors.New(cors.Options{
+		AllowedOrigins: []string{"*"},
+		AllowedMethods: []string{"OPTIONS", "GET", "POST", "PUT"},
+		AllowedHeaders: []string{"Content-Type", "X-CSRF-Token"},
+		Debug:          true,
+	}).Handler(mainRoute)
+
+	return corsMiddleware, nil
 }
 
 func sampleHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
 	w.Write([]byte("hello worlds"))
 }
