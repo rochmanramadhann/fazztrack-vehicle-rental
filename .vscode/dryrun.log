@@ -1,0 +1,5 @@
+make: Entering directory `/Users/rochmanramadhanichieftoirawan/Documents/Working Space/go-workspace/fazztrack/src/github.com/rochmanramadhann/fazztrack-vehicle'
+make: Leaving directory `/Users/rochmanramadhanichieftoirawan/Documents/Working Space/go-workspace/fazztrack/src/github.com/rochmanramadhann/fazztrack-vehicle'
+ 
+Makefile:5: *** missing separator.  Stop.
+
