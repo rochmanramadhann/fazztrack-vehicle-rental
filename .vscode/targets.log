@@ -7,10 +7,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-Makefile:5: *** missing separator.  Stop.
+make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Jun 20 15:44:54 2022
+# Make data base, printed on Tue Jun 28 08:26:11 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/p5/j_mfhhbn3dzf5vbm73pqcmmw0000gn/T/vscode-ipc-5123ed9c-8cea-41d6-9ff6-e59ad2898ab9.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/p5/j_mfhhbn3dzf5vbm73pqcmmw0000gn/T/vscode-ipc-9fea7652-b1f5-4f29-9bb1-ee961ba435f8.sock
 # makefile (from `Makefile', line 1)
 APP = fazztrack-vehicle
 # environment
@@ -71,7 +71,7 @@ LDFLAGS = -L/opt/homebrew/opt/php@8.0/lib
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4bkcLPWoQ9/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Fkd1zGK7yM/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -79,7 +79,7 @@ TTY = not a tty
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-FIG_PID = 5696
+FIG_PID = 2932
 # environment
 PWD = /Users/rochmanramadhanichieftoirawan/Documents/Working Space/go-workspace/fazztrack/src/github.com/rochmanramadhann/fazztrack-vehicle
 # environment
@@ -95,18 +95,17 @@ HOME = /Users/rochmanramadhanichieftoirawan
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/rochmanramadhanichieftoirawan/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /Users/rochmanramadhanichieftoirawan/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = rochmanramadhanichieftoirawan
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
- 
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -130,7 +129,7 @@ TMPDIR = /var/folders/p5/j_mfhhbn3dzf5vbm73pqcmmw0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/rochmanramadhanichieftoirawan/Library/Application Support/Code/1.68.0-main.sock
+VSCODE_IPC_HOOK = /Users/rochmanramadhanichieftoirawan/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -138,7 +137,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.22978023.22978030
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.25580667.25580673
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -168,9 +167,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5682
+VSCODE_PID = 2922
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=2/92=2%
+# Load=77/1024=8%, Rehash=0, Collisions=2/101=2%
 
 # Pattern-specific Variable Values
 
@@ -178,9 +177,9 @@ VSCODE_PID = 5682
 
 # Directories
 
-# . (device 16777230, inode 22589051): 15 files, no impossibilities.
+# . (device 16777230, inode 22589051): 17 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -191,9 +190,11 @@ VSCODE_PID = 5682
 # Not a target:
 all:
 #  Command-line target.
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .SUFFIXES:
@@ -203,14 +204,28 @@ all:
 
 # Not a target:
 Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 16:06:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 10):
+	mkdir -p ./build && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ${APP_EXE}
+	
 
 runs:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 5):
+	go run main.go server
+	
 
 # Not a target:
 .DEFAULT:
@@ -218,9 +233,16 @@ runs:
 #  Modification time never checked.
 #  File has not been updated.
 
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 8):
+	./build/$(APP) server
+	
+
 # files hash-table stats:
-# Load=5/1024=0%, Rehash=0, Collisions=0/6=0%
- 
+# Load=7/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -232,6 +254,6 @@ runs:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jun 20 15:44:54 2022
+# Finished Make data base on Tue Jun 28 08:26:11 2022
 
  

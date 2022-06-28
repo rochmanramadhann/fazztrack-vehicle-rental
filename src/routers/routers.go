@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/newrelic/go-agent/v3/integrations/nrgorilla"
+	"github.com/newrelic/go-agent/v3/newrelic"
 	database "github.com/rochmanramadhann/fazztrack-vehicle/src/database/gorm"
 	"github.com/rochmanramadhann/fazztrack-vehicle/src/modules/v1/auth"
 	"github.com/rochmanramadhann/fazztrack-vehicle/src/modules/v1/favorites"
@@ -16,6 +18,16 @@ import (
 
 func New() (http.Handler, error) {
 	mainRoute := mux.NewRouter()
+	nRelic, err := newrelic.NewApplication(
+		newrelic.ConfigAppName("fazztrack-vehicle"),
+		newrelic.ConfigLicense("7bad166af83620e844b6418ccff6b402996bNRAL"),
+		newrelic.ConfigDistributedTracerEnabled(true),
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	mainRoute.Use(nrgorilla.Middleware(nRelic))
 
 	db, err := database.New()
 	if err != nil {
@@ -23,6 +35,7 @@ func New() (http.Handler, error) {
 	}
 
 	mainRoute.HandleFunc("/", sampleHandler).Methods("GET")
+	mainRoute.HandleFunc(newrelic.WrapHandleFunc(nRelic, "/relic", relicHandler)).Methods("GET")
 	users.New(mainRoute, db)
 	vehicle_types.New(mainRoute, db)
 	vehicles.New(mainRoute, db)
@@ -44,4 +57,10 @@ func sampleHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	w.Write([]byte("hello worlds"))
+}
+
+func relicHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	w.Write([]byte("hello newrelic"))
 }

@@ -2,76 +2,72 @@
 
 ### USER SERVICE
 ### ADD USER
-POST http://localhost:8080/users/ HTTP/1.1
+POST https://fazztrack-vehicle.herokuapp.com/users/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "indra",
-    "email": "indra@mail.com",
+    "name": "oman",
+    "email": "oman@mail.com",
     "password": "password"
 }
 
 ### FIND USERS
-GET http://localhost:8080/users/search?name=oman HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/users/search?name=indras HTTP/1.1
 Content-Type: application/json
 
 ### SORT USERS
-GET http://localhost:8080/users/sort?sort=desc HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/users/sort?sort=desc HTTP/1.1
 Content-Type: application/json
 
 ### GET USERS
-GET http://localhost:8080/users/ HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/users/ HTTP/1.1
 Content-Type: application/json
 
 ### GET USER
-GET http://localhost:8080/users/2 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/users/2 HTTP/1.1
 Content-Type: application/json
 
 ### UPDATE USER
-PUT http://localhost:8080/users/4 HTTP/1.1
-Authorization: {{tokens}}
+PUT https://fazztrack-vehicle.herokuapp.com/users/2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "kirey",
-    "email": "kirey@mail.com",
-    "password": "kirey"
+    "name": "budi",
+    "email": "budi@mail.com",
+    "password": "budi"
 }
 
 ### DELETE USER
-DELETE http://localhost:8080/users/5 HTTP/1.1
-Authorization: {{tokens}}
+DELETE https://fazztrack-vehicle.herokuapp.com/users/2 HTTP/1.1
 Content-Type: application/json
 
 ### VEHICLE_TYPES SERVICE
 ### ADD VEHICLE_TYPES
-POST http://localhost:8080/vehicles/types/ HTTP/1.1
-Authorization: {{tokens}}
+POST https://fazztrack-vehicle.herokuapp.com/vehicles/types/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "sporti"
+    "name": "Motorcycle"
 }
 
 ### FIND VEHICLE_TYPES
-GET http://localhost:8080/vehicles/types/search?name=Car HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/types/search?name=Car HTTP/1.1
 Content-Type: application/json
 
 ### SORT VEHICLE_TYPES
-GET http://localhost:8080/vehicles/types/sort?sort=desc HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/types/sort?sort=desc HTTP/1.1
 Content-Type: application/json
 
 ### GET VEHICLE_TYPES
-GET http://localhost:8080/vehicles/types/ HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/types/ HTTP/1.1
 Content-Type: application/json
 
 ### GET VEHICLE_TYPE
-GET http://localhost:8080/vehicles/types/2 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/types/2 HTTP/1.1
 Content-Type: application/json
 
 ### UPDATE VEHICLE_TYPE
-PUT http://localhost:8080/vehicles/types/3 HTTP/1.1
-Authorization: {{tokens}}
+PUT https://fazztrack-vehicle.herokuapp.com/vehicles/types/3 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -79,19 +75,18 @@ Content-Type: application/json
 }
 
 ### DELETE VEHICLE_TYPE
-DELETE http://localhost:8080/vehicles/types/3 HTTP/1.1
-Authorization: {{tokens}}
+DELETE https://fazztrack-vehicle.herokuapp.com/vehicles/types/3 HTTP/1.1
 Content-Type: application/json
 
 ### VEHICLE SERVICE
 ### ADD VEHICLE
-POST http://localhost:8080/vehicles/ HTTP/1.1
-Authorization: {{tokens}}
+POST https://fazztrack-vehicle.herokuapp.com/vehicles/ HTTP/1.1
 Content-Type: application/json
 
 {
     "vehicle_type_id": 2,
     "name": "Ferrari",
+    "image": "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3264&q=80",
     "book_count": 1,
     "is_highlight": 0,
     "stock": 5,
@@ -100,29 +95,29 @@ Content-Type: application/json
 }
 
 ### FIND VEHICLES
-GET http://localhost:8080/vehicles/search?is_highlight=1 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/search?is_highlight=1 HTTP/1.1
 Content-Type: application/json
 
 ### SORT VEHICLES
-GET http://localhost:8080/vehicles/sort?sort=desc HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/sort?sort=desc HTTP/1.1
 Content-Type: application/json
 
 ### GET VEHICLES
-GET http://localhost:8080/vehicles/ HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/ HTTP/1.1
 Content-Type: application/json
 
 ### GET VEHICLE
-GET http://localhost:8080/vehicles/1 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/vehicles/1 HTTP/1.1
 Content-Type: application/json
 
 ### UPDATE VEHICLE
-PUT http://localhost:8080/vehicles/1 HTTP/1.1
-Authorization: {{tokens}}
+PUT https://fazztrack-vehicle.herokuapp.com/vehicles/1 HTTP/1.1
 Content-Type: application/json
 
 {
     "vehicle_type_id": 1,
     "name": "Brio",
+    "image": "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3264&q=80",
     "book_count": 1,
     "is_highlight": 1,
     "stock": 5,
@@ -131,14 +126,12 @@ Content-Type: application/json
 }
 
 ### DELETE VEHICLE
-DELETE http://localhost:8080/vehicles/13 HTTP/1.1
-Authorization: {{tokens}}
+DELETE https://fazztrack-vehicle.herokuapp.com/vehicles/13 HTTP/1.1
 Content-Type: application/json
 
 ### ORDER SERVICE
 ### ADD ORDER
-POST http://localhost:8080/orders/ HTTP/1.1
-Authorization: {{tokens}}
+POST https://fazztrack-vehicle.herokuapp.com/orders/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -152,24 +145,23 @@ Content-Type: application/json
 }
 
 ### FIND ORDERS
-GET http://localhost:8080/orders/order_date=time HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/orders/order_date=time HTTP/1.1
 Content-Type: application/json
 
 ### SORT ORDERS
-GET http://localhost:8080/orders/sort?sort=desc HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/orders/sort?sort=desc HTTP/1.1
 Content-Type: application/json
 
 ### GET ORDERS
-GET http://localhost:8080/orders/ HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/orders/ HTTP/1.1
 Content-Type: application/json
 
 ### GET ORDER
-GET http://localhost:8080/orders/12 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/orders/12 HTTP/1.1
 Content-Type: application/json
 
 ### UPDATE ORDER
-PUT http://localhost:8080/orders/12 HTTP/1.1
-Authorization: {{tokens}}
+PUT https://fazztrack-vehicle.herokuapp.com/orders/12 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -183,14 +175,12 @@ Content-Type: application/json
 }
 
 ### DELETE ORDER
-DELETE http://localhost:8080/orders/13 HTTP/1.1
-Authorization: {{tokens}}
+DELETE https://fazztrack-vehicle.herokuapp.com/orders/13 HTTP/1.1
 Content-Type: application/json
 
 ### FAVORITE SERVICE
 ### ADD FAVORITE
-POST http://localhost:8080/favorites/ HTTP/1.1
-Authorization: {{tokens}}
+POST https://fazztrack-vehicle.herokuapp.com/favorites/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -199,24 +189,23 @@ Content-Type: application/json
 }
 
 ### FIND FAVORITES
-GET http://localhost:8080/favorites/FAVORITE_date=time HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/favorites/FAVORITE_date=time HTTP/1.1
 Content-Type: application/json
 
 ### SORT FAVORITES
-GET http://localhost:8080/favorites/sort?sort=desc HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/favorites/sort?sort=desc HTTP/1.1
 Content-Type: application/json
 
 ### GET FAVORITES
-GET http://localhost:8080/favorites/ HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/favorites/ HTTP/1.1
 Content-Type: application/json
 
 ### GET FAVORITE
-GET http://localhost:8080/favorites/1 HTTP/1.1
+GET https://fazztrack-vehicle.herokuapp.com/favorites/1 HTTP/1.1
 Content-Type: application/json
 
 ### UPDATE FAVORITE
-PUT http://localhost:8080/favorites/2 HTTP/1.1
-Authorization: {{tokens}}
+PUT https://fazztrack-vehicle.herokuapp.com/favorites/2 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -225,12 +214,11 @@ Content-Type: application/json
 }
 
 ### DELETE FAVORITE
-DELETE http://localhost:8080/favorites/13 HTTP/1.1
-Authorization: {{tokens}}
+DELETE https://fazztrack-vehicle.herokuapp.com/favorites/13 HTTP/1.1
 Content-Type: application/json
 
 ### AUTH LOGIN
-POST http://localhost:8080/auth/ HTTP/1.1
+POST https://fazztrack-vehicle.herokuapp.com/auth/ HTTP/1.1
 Content-Type: application/json
 
 {

@@ -26,6 +26,9 @@ require (
 	github.com/jackc/pgx/v4 v4.16.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/newrelic/go-agent v3.16.1+incompatible // indirect
+	github.com/newrelic/go-agent/v3 v3.0.0 // indirect
+	github.com/newrelic/go-agent/v3/integrations/nrgorilla v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rs/cors v1.8.2 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect

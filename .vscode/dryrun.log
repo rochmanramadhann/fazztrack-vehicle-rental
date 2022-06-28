@@ -1,5 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/rochmanramadhanichieftoirawan/Documents/Working Space/go-workspace/fazztrack/src/github.com/rochmanramadhann/fazztrack-vehicle'
+go run main.go server
 make: Leaving directory `/Users/rochmanramadhanichieftoirawan/Documents/Working Space/go-workspace/fazztrack/src/github.com/rochmanramadhann/fazztrack-vehicle'
  
-Makefile:5: *** missing separator.  Stop.
-
