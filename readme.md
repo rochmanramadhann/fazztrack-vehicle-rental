@@ -1,4 +1,4 @@
-<h1 align="center">Lectronic-Ku</h1>
+<h1 align="center">Vehicle Rental</h1>
 <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/2560px-Go_Logo_Blue.svg.png" width="400px" alt="Golang.jpg" /></p>
 <p align="center">
     <a href="https://golang.org/" target="blank">More about Golang</a>
@@ -17,7 +17,7 @@ This backend application is used by the user to record incoming orders and manag
 
 - Authentication and Authorization
 - JWT Web Token
-- CRUD Product
+- CRUD Vehicle
 - CRUD Category
 - CRUD History
 - Solid Principle
@@ -64,7 +64,3 @@ go run main.go serve
 ```bash
 View the website at: http://localhost:8080
 ```
-
-## End Point
-
-You can see all the end point [here](https://documenter.getpostman.com/view/12136790/UzJPLExt#df1f63e0-c9bf-4db2-b0ca-67ec3a17e2a2)
